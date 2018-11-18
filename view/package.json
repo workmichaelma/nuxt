@@ -1,8 +1,8 @@
 {
-  "name": "nuxt",
+  "name": "view",
   "version": "1.0.0",
-  "description": "My slick Nuxt.js project",
-  "author": "Michael",
+  "description": "My divine Nuxt.js project",
+  "author": "Michael Ma",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
@@ -16,6 +16,7 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "express": "^4.16.3",
+    "vuetify": "^1.2.4",
     "@nuxtjs/axios": "^5.0.0"
   },
   "devDependencies": {
@@ -26,6 +27,8 @@
     "eslint-plugin-vue": "^4.0.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
-    "prettier": "1.14.3"
+    "prettier": "1.14.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }

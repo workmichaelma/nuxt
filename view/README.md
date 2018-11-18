@@ -1,6 +1,6 @@
-# nuxt
+# view
 
-> My slick Nuxt.js project
+> My divine Nuxt.js project
 
 ## Build Setup
 
