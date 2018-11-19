@@ -4,5 +4,7 @@ services:
     container_name: nuxt
     restart: always
     build: ./view
+    volumes:
+      - ./view:/usr/src/app:rw
     ports:
       - '80:3000'
