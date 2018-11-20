@@ -1,5 +1,5 @@
 <template>
-  <v-layout
+  <!-- <v-layout
     column
     justify-center
     align-center>
@@ -8,8 +8,6 @@
       sm8
       md6>
       <div class="text-xs-center">
-        <!-- <logo/>
-        <vuetify-logo/> -->
         <img src="~/assets/images/cover.jpeg"/>
       </div>
       <v-card>
@@ -50,17 +48,20 @@
         </v-card-actions>
       </v-card>
     </v-flex>
-  </v-layout>
+  </v-layout> -->
+  <carousel/>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Carousel from '~/components/Index/Carousel'
 
 export default {
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
+    Carousel
   }
 }
 </script>

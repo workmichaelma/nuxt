@@ -24,24 +24,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer> -->
-    <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-      color="#fff"
-    >
-      <v-toolbar-title v-text="title"/>
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
-    </v-toolbar>
+    <nav-bar/>
     <v-content>
-      <v-container>
         <nuxt />
-      </v-container>
     </v-content>
     <v-navigation-drawer
       :right="right"
@@ -68,6 +53,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import NavBar from '../components/Header/NavBar'
   export default {
     data() {
       return {
@@ -83,6 +70,27 @@
         rightDrawer: false,
         title: 'Vuetify.js'
       }
+    },
+    components: {
+      NavBar
+    },
+    created () {
+      this.update_isDesktop(this.isDesktop)
+    },
+    computed: {
+      isDesktop () {
+        return this.$vuetify.breakpoint.lgAndUp
+      }
+    },
+    watch: {
+      isDesktop () {
+        this.update_isDesktop(this.isDesktop)
+      }
+    },
+    methods: {
+      ...mapActions({
+        update_isDesktop: 'theme/update_isDesktop'
+      })
     }
   }
 </script>
