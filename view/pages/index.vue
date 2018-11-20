@@ -8,8 +8,9 @@
       sm8
       md6>
       <div class="text-xs-center">
-        <logo/>
-        <vuetify-logo/>
+        <!-- <logo/>
+        <vuetify-logo/> -->
+        <img src="~/assets/images/cover.jpeg"/>
       </div>
       <v-card>
         <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js templates</v-card-title>

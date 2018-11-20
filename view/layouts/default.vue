@@ -1,6 +1,6 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
+  <v-app class="white">
+    <!-- <v-navigation-drawer
       :mini-variant="miniVariant"
       :clipped="clipped"
       v-model="drawer"
@@ -23,31 +23,13 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-toolbar
       :clipped-left="clipped"
       fixed
       app
+      color="#fff"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" />
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title"/>
       <v-btn
         icon
@@ -80,7 +62,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2017</span>
+      <span>&copy; 2018</span>
     </v-footer>
   </v-app>
 </template>
