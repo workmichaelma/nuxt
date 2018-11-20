@@ -1,4 +1,8 @@
 version: '3'
+networks:
+  nuxt_default:
+    external: true
+
 services:
   app:
     container_name: nuxt
@@ -8,3 +12,22 @@ services:
       - ./view:/usr/src/app:rw
     ports:
       - '80:3000'
+    networks:
+      - nuxt_default
+    links:
+      - api
+  api:
+    container_name: express
+    restart: always
+    build: ./api
+    ports:
+      - '81:3000'
+    links:
+      - mongo
+    networks:
+      - nuxt_default
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'

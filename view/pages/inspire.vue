@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     data: () => ({
       cards: [
@@ -68,6 +69,11 @@
         { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
         { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
       ]
-    })
+    }),
+    mounted: () => {
+      axios.get('http://0.0.0.0:81').then((res, err) => {
+        console.error(res, err)
+      })
+    }
   }
 </script>
