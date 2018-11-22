@@ -13,15 +13,17 @@
             <nuxt-link class="nav__logo" to="/">
                 <img class="nav__logo__img" src="../../assets/images/logo.png"/>
             </nuxt-link>
-            <v-btn class="nav__menu" outline color="brown lighten-1">
+            <!-- <v-btn class="nav__menu" outline color="brown lighten-1">
                 <v-icon>menu</v-icon>
-            </v-btn>
+            </v-btn> -->
+            <contact-list/>
         </v-container>
     </v-toolbar>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import ContactList from './ContactList'
 export default {
   name: 'nav-bar',
   data() {
@@ -40,6 +42,9 @@ export default {
     navBarHeight() {
       return this.isDesktop ? 100 : 50
     }
+  },
+  components: {
+      ContactList
   }
 }
 </script>

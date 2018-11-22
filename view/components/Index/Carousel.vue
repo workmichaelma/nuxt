@@ -23,9 +23,9 @@ export default {
   data() {
     return {
       items: [
-        // {
-        //   src: '../../assets/images/cover.jpeg'
-        // },
+        {
+          src: require('~/assets/images/cover.jpeg')
+        },
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
         },

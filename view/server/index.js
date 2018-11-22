@@ -21,6 +21,8 @@ async function start() {
     await builder.build()
   }
 
+  app.use('/assets', express.static(__dirname + '/assets'))
+
   // Give nuxt middleware to express
   app.use(nuxt.render)
 

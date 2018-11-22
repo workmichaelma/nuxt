@@ -65,6 +65,30 @@ module.exports = {
       //     exclude: /(node_modules)/
       //   })
       // }
+      config.output.publicPath = '_nuxt/'
+      const babelLoader = config.module.rules.find(rule => rule.loader === 'babel-loader')
+      const babelLoaderEs6 = Object.assign({}, babelLoader, { exclude: undefined, test: /\.es6$/ })
+      config.module.rules.push(babelLoaderEs6)
+      config.module.rules.push(
+        {
+          test: /\.(png|jpe?g|gif|svg|webp)$/,
+          include: '/assets',
+          loader: 'url-loader',
+          query: {
+            limit: 1000, // 1kB
+            name: 'images/[name].[hash:7].[ext]'
+          }
+        }
+      //   {
+      //     enforce: 'pre',
+      //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      //     loader: 'url-loader',
+      //     query: {
+      //       limit: 1000, // 1kB
+      //       name: 'fonts/[name].[hash:7].[ext]'
+      //     }
+      //   }
+      )
     }
   }
 }
