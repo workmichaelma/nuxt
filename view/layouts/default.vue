@@ -1,5 +1,5 @@
 <template>
-  <v-app class="white">
+  <v-app class="white" id="v-app">
     <!-- <v-navigation-drawer
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -28,6 +28,7 @@
     <v-content>
         <nuxt />
     </v-content>
+    <main-footer/>
     <v-navigation-drawer
       :right="right"
       v-model="rightDrawer"
@@ -43,18 +44,13 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; 2018</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import NavBar from '../components/Header/NavBar'
+import MainFooter from '../components/MainFooter'
   export default {
     data() {
       return {
@@ -72,14 +68,15 @@ import NavBar from '../components/Header/NavBar'
       }
     },
     components: {
-      NavBar
+      NavBar,
+      MainFooter,
     },
     created () {
       this.update_isDesktop(this.isDesktop)
     },
     computed: {
       isDesktop () {
-        return this.$vuetify.breakpoint.lgAndUp
+        return this.$vuetify.breakpoint.mdAndUp
       }
     },
     watch: {
@@ -94,3 +91,28 @@ import NavBar from '../components/Header/NavBar'
     }
   }
 </script>
+
+<style lang="stylus">
+#v-app
+  .nav-bar,
+  .v-contect,
+  .footer
+    width 100%
+
+@media only screen and (min-width: 960px) {
+  .container {
+    max-width: 900px !important;
+  }
+}
+@media only screen and (min-width: 1264px) {
+  .container {
+    max-width: 900px !important;
+  }
+}
+@media only screen and (min-width: 1904px) {
+  .container {
+    max-width: 900px !important;
+  }
+}
+
+</style>

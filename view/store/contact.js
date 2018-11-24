@@ -20,6 +20,26 @@ export const actions = {
 export const getters = {
   get_contact: state => (key = null) => {
     return key ? state[key] : state
+  },
+  get_contactPath: state => (key = null) => {
+    let url = ''
+    switch (key) {
+      case 'whatsapp':
+        url = `https://api.whatsapp.com/send?phone=${state.whatsapp}&text=你好！`
+        break
+      case 'phone':
+        url = `tel: ${state.phone}`
+        break
+      case 'email':
+        url = `mailto:${state.email}?Subject=你好!`
+        break
+      case 'facebook':
+        url = `${state.facebook}`
+        break
+      default:
+        break
+    }
+    return url
   }
 }
 

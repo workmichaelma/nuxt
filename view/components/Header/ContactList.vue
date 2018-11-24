@@ -1,7 +1,7 @@
 <template>
   <v-layout class="contact-list" align-center>
     <v-flex class="contact-list__item" v-for="(v, name) in contact" :key="name">
-      <a :href="connect(name)" target="_blank">
+      <a :href="get_contactPath(name)" target="_blank">
         <img :src="require(`~/assets/images/${name}.png`)"/>
       </a>
     </v-flex>
@@ -14,51 +14,39 @@ export default {
   name: 'contact-list',
   computed: {
     ...mapGetters({
-      get_contact: 'contact/get_contact'
+      get_contact: 'contact/get_contact',
+      get_contactPath: 'contact/get_contactPath'
     }),
     contact () {
       return this.get_contact()
     }
   },
   methods: {
-    connect: function (name) {
-      let url = ''
-      let self = this
-      switch (name) {
-        case 'whatsapp':
-          url = `https://api.whatsapp.com/send?phone=${self.contact.whatsapp}&text=你好！`
-          break
-        case 'phone':
-          url = `tel: ${this.contact.phone}`
-          break
-        case 'email':
-          url = `mailto:${this.contact.email}?Subject=你好!`
-          break
-        case 'facebook':
-          url = `${this.contact.facebook}`
-          break
-        default:
-          break
-      }
-      return url
-    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
+@import '~assets/style/app.styl'
 .contact-list
   flex-grow 0 !important
   &__item
-    width 40px
-    height 40px
-    max-width 40px
     margin 0 5px
     border-radius 50%
-    box-shadow 1px 2px 4px 0px #1b1313a6
+    filter drop-shadow(1px 1px 2px #aaa)
     img
       width 100%
       height 100%
+  +desktop()
+    &__item
+      width 40px
+      height 40px
+      max-width 40px
+  +mobile()
+    &__item
+      width 30px
+      height 30px
+      max-width 30px
 </style>
 
 
