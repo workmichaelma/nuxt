@@ -55,7 +55,7 @@ module.exports = {
   build: {
     plugins: [
       new webpack.ProvidePlugin({
-        '_': 'lodash'
+        _: 'lodash'
       })
     ],
     /*
