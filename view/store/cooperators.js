@@ -20,7 +20,7 @@ export const state = () => ({
     },
     {
       label: '貢茶',
-      icon: 'https://pic2.zhimg.com/80/8147c6a30a1a48c783511626217b6459_hd.jpg'
+      icon: 'https://pbs.twimg.com/profile_images/825218217756938240/iG9uQ_Vz_400x400.jpg'
     },
     {
       label: '7-11',

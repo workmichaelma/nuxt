@@ -14,11 +14,11 @@ export default {
   name: 'contact-list',
   computed: {
     ...mapGetters({
-      get_contact: 'contact/get_contact',
-      get_contactPath: 'contact/get_contactPath'
+      get_Profile: 'profile/get_Profile',
+      get_contactPath: 'profile/get_contactPath'
     }),
     contact () {
-      return this.get_contact()
+      return this.get_Profile('Contact')
     }
   },
   methods: {

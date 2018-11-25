@@ -4,7 +4,7 @@
       <v-layout align-center>
         <v-flex shrink>
           <v-layout class="links" wrap>
-            <v-flex class="links__item" v-for="(page, i) in pages" :key="i" :xs4="!isDesktop">
+            <v-flex class="links__item" v-for="(page, i) in pages" :key="i" v-bind="{'xs4': !isDesktop}">
               <nuxt-link :to="page.path">
                 {{ page.label }}
               </nuxt-link>
@@ -14,7 +14,7 @@
         <v-spacer/>
         <v-flex shrink>
           <v-layout class="social" align-center wrap>
-            <v-flex class="social__item" v-for="(v, name) in contact" :key="name" shrink :xs6="!isDesktop">
+            <v-flex class="social__item" v-for="(v, name) in contact" :key="name" shrink v-bind="{'xs6': !isDesktop}">
               <a :href="get_contactPath(name)" target="_blank">
                 <img :src="require(`~/assets/images/${name}.png`)"/>
               </a>
@@ -34,16 +34,19 @@ export default {
   computed: {
     ...mapGetters({
       get_pages: 'pages/get_pages',
-      get_contact: 'contact/get_contact',
-      get_contactPath: 'contact/get_contactPath'
+      get_Profile: 'profile/get_Profile',
+      get_contactPath: 'profile/get_contactPath'
     }),
     pages () {
       return this.get_pages()
     },
     contact () {
-      return this.get_contact()
+      return this.get_Profile('Contact')
     }
-  }
+  },
+  mounted() {
+    console.log(this.isDesktop)
+  },
 }
 </script>
 <style lang="stylus" scoped>

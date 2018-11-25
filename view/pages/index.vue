@@ -3,11 +3,12 @@
     <carousel/>
     <page-list/>
     <cooperator/>
-    <google-map/>
+    <google-map :height="isDesktop ? '450' : '225'"/>
   </div>
 </template>
 
 <script>
+import IsDesktop from '~/components/mixins/IsDesktop'
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import Carousel from '~/components/Index/Carousel'
@@ -17,6 +18,7 @@ import GoogleMap from '~/components/GoogleMap'
 
 export default {
   name: 'index-page',
+  mixins: [IsDesktop],
   components: {
     Logo,
     VuetifyLogo,

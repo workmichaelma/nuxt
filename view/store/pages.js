@@ -8,7 +8,7 @@ export const state = () => ({
       icon: 'info'
     },
     {
-      path: 'material-bill',
+      path: 'bill',
       label: '材料單價',
       icon: 'settings'
     },
