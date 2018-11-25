@@ -1,7 +1,7 @@
 version: '3'
-networks:
-  nuxt_default:
-    external: true
+# networks:
+#   nuxt_default:
+#     external: true
 
 services:
   app:
@@ -12,8 +12,8 @@ services:
       - ./view:/usr/src/app:rw
     ports:
       - '80:3000'
-    networks:
-      - nuxt_default
+    # networks:
+    #   - nuxt_default
     # links:
     #   - api
   # api:
