@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
     <v-container>
-      <v-layout align-center>
+      <!-- <v-layout align-center>
         <v-flex shrink>
           <v-layout class="links" wrap>
-            <v-flex class="links__item" v-for="(page, i) in pages" :key="i" v-bind="{'xs4': !isDesktop}">
+            <v-flex class="links__item" v-for="(page, i) in pages" :key="i">
               <nuxt-link :to="page.path">
                 {{ page.label }}
               </nuxt-link>
@@ -12,16 +12,26 @@
           </v-layout>
         </v-flex>
         <v-spacer/>
-        <v-flex shrink>
+        <v-flex shrink class="rights">
           <v-layout class="social" align-center wrap>
-            <v-flex class="social__item" v-for="(v, name) in contact" :key="name" shrink v-bind="{'xs6': !isDesktop}">
+            <v-flex class="social__item" v-for="(v, name) in contact" :key="name" shrink>
               <a :href="get_contactPath(name)" target="_blank">
                 <img :src="require(`~/assets/images/${name}.png`)"/>
               </a>
             </v-flex>
           </v-layout>
         </v-flex>
+      </v-layout> -->
+      <v-layout class="links" justify-start>
+        <div class="links__item" v-for="(page, i) in pages" :key="i">
+          <nuxt-link :to="page.path">
+            {{ page.label }}
+          </nuxt-link>
+        </div>
       </v-layout>
+      <div class="rights text-xs-right">
+        <i>All Rights Reserved. </i>
+      </div>
     </v-container>
   </div>
 </template>
@@ -42,6 +52,9 @@ export default {
     },
     contact () {
       return this.get_Profile('Contact')
+    },
+    companyName () {
+      return this.get_Profile('CompanyName')
     }
   },
   mounted() {
@@ -67,6 +80,8 @@ a
       img
         width $social-height
         height $social-height
+  .rights
+    color #fff
   +desktop()
     .links
       &__item
@@ -74,15 +89,19 @@ a
     .social 
       &__item
         margin 0 15px
+    .rights
+      font-size 12px
   +mobile()
     .container
       padding 8px
     .links
       &__item
-        margin 2px 0
+        margin 0 5px
     .social 
       &__item
-        margin 2px 0
+        margin 0 2px
+    .rights
+      font-size 10px
 </style>
 
 

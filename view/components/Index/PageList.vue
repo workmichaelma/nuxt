@@ -1,6 +1,6 @@
 <template>
   <div class="page-list">
-    <v-card flat>
+    <!-- <v-card flat>
       <v-layout align-center justify-center>
         <v-flex shrink>
           <v-btn fab flat @click="prev" light v-bind="size" class="direction-btn">
@@ -35,7 +35,21 @@
           </v-btn>
         </v-flex>
       </v-layout>
-    </v-card>
+    </v-card> -->
+    <v-layout align-center justify-center fill-height tag="v-card-text">
+      <v-flex class="page-list__item" v-for="(page, i) in pages" :key="i" fill-height>
+        <v-card class="fill-height">
+          <nuxt-link :to="page.path">
+            <v-layout column fill-height justify-space-around align-center large>
+              <v-btn fab depressed ripple color="grey lighten-3" v-bind="size">
+                <v-icon v-bind="size">{{page.icon}}</v-icon>
+              </v-btn>
+              <div class="label">{{ page.label }}</div>
+            </v-layout>
+          </nuxt-link>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
@@ -112,12 +126,14 @@ a
     max-width 1264px
     padding 50px 0
     &__item
+      height 300px
       .label
         font-size 20px
   +mobile()
     max-width 480px
     padding 25px 0
     &__item
+      height 150px
       .label
         font-size 12px
 </style>

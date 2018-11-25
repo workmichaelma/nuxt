@@ -9,14 +9,14 @@ export const state = () => ({
     },
     {
       path: 'bill',
-      label: '材料單價',
+      label: '工程報價',
       icon: 'settings'
     },
-    {
-      path: 'job-bill',
-      label: '工程單價',
-      icon: 'build'
-    },
+    // {
+    //   path: 'job-bill',
+    //   label: '工程單價',
+    //   icon: 'build'
+    // },
     {
       path: 'show-photo',
       label: '圖片庫',
@@ -27,11 +27,11 @@ export const state = () => ({
       label: '影片庫',
       icon: 'video_library'
     },
-    {
-      path: 'contact-us',
-      label: '聯絡我們',
-      icon: 'contact_support'
-    }
+    // {
+    //   path: 'contact-us',
+    //   label: '聯絡我們',
+    //   icon: 'contact_support'
+    // }
   ]
 })
 

@@ -18,7 +18,7 @@
                     <v-list-tile-title class="contact-box__table__title">{{ contact.data }}</v-list-tile-title>
                   </v-list-tile-content>
                 </v-list-tile>
-                <v-divider inset v-if="i < contacts.length - 1" :key="i"></v-divider>
+                <v-divider inset v-if="i < contacts.length - 1" :key="`divider-${i}`"></v-divider>
               </template>
             </v-list>
           </div>
