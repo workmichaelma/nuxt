@@ -40,7 +40,7 @@ export default {
   },
   mounted() {},
   components: {
-      ContactList
+    ContactList
   }
 }
 </script>
