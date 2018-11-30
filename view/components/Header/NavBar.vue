@@ -21,7 +21,7 @@
             <v-icon>menu</v-icon>
         </v-btn> -->
         <v-flex shrink>
-          <contact-list/>
+          <!-- <contact-list/> -->
         </v-flex>
       </v-container>
   </v-toolbar>
@@ -40,7 +40,7 @@ export default {
   },
   mounted() {},
   components: {
-    ContactList
+    // ContactList
   }
 }
 </script>

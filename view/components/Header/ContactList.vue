@@ -1,8 +1,8 @@
 <template>
   <v-layout class="contact-list" align-center>
-    <v-flex class="contact-list__item" v-for="(v, name) in contact">
+    <v-flex class="contact-list__item" v-for="(v, name) in contact" :key="name">
       <a :href="get_contactPath(name)" target="_blank">
-        <!-- <img :src="`~assets/images/${name}.png`"/> -->
+        <img :src="require(`~/assets/images/${name}.png`)"/>
       </a>
     </v-flex>
   </v-layout>
@@ -33,7 +33,7 @@ export default {
   &__item
     margin 0 5px
     border-radius 50%
-    // filter drop-shadow(1px 1px 2px #aaa)
+    filter drop-shadow(1px 1px 2px #aaa)
     img
       width 100%
       height 100%
