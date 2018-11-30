@@ -2,7 +2,7 @@
   <v-layout class="contact-list" align-center>
     <v-flex class="contact-list__item" v-for="(v, name) in contact" :key="name">
       <a :href="get_contactPath(name)" target="_blank">
-        <img :src="require(`~/assets/images/${name}.png`)"/>
+        <!-- <img :src="`~assets/images/${name}.png`"/> -->
       </a>
     </v-flex>
   </v-layout>

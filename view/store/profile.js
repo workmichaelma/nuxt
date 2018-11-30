@@ -27,16 +27,16 @@ export const getters = {
     let url = ''
     switch (key) {
       case 'whatsapp':
-        url = `https://api.whatsapp.com/send?phone=${state.whatsapp}&text=你好！`
+        url = `https://api.whatsapp.com/send?phone=${state.Contact.whatsapp}&text=你好！`
         break
       case 'phone':
-        url = `tel: ${state.phone}`
+        url = `tel: ${state.Contact.phone}`
         break
       case 'email':
-        url = `mailto:${state.email}?Subject=你好!`
+        url = `mailto:${state.Contact.email}?Subject=你好!`
         break
       case 'facebook':
-        url = `${state.facebook}`
+        url = `${state.Contact.facebook}`
         break
       default:
         break
