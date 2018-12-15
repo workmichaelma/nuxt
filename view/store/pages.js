@@ -18,15 +18,15 @@ export const state = () => ({
     //   icon: 'build'
     // },
     {
-      path: 'show-photo',
-      label: '圖片庫',
+      path: 'gallery',
+      label: '工程相片庫',
       icon: 'image'
     },
-    {
-      path: 'show-video',
-      label: '影片庫',
-      icon: 'video_library'
-    },
+    // {
+    //   path: 'show-video',
+    //   label: '影片庫',
+    //   icon: 'video_library'
+    // },
     // {
     //   path: 'contact-us',
     //   label: '聯絡我們',

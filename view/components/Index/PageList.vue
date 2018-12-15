@@ -120,8 +120,11 @@ a
     &:hover
       .v-card
         background-color rgba(255, 247, 230, 0.5)
-    .label
-      font-weight bold
+    .v-card
+      border 2px solid #eee
+      box-shadow none
+      .label
+        font-weight bold
   +desktop()
     max-width 1264px
     padding 50px 0
@@ -133,7 +136,7 @@ a
     max-width 480px
     padding 25px 0
     &__item
-      height 150px
+      height 125px
       .label
         font-size 12px
 </style>

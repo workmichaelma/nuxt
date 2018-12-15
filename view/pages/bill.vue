@@ -2,6 +2,7 @@
   <div class="bill">
     <div class="cover-background"></div>
     <v-container class="bill__list">
+      <v-flex class="headline text-xs-center" pb-4>工程報價</v-flex>
       <job-list :bills="job" color="#fbfbe4"/>
       <job-list :bills="material" color="#e4ecfb"/>
     </v-container>

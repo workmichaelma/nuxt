@@ -8,7 +8,7 @@ export default {
       return this.get_isDesktop
     },
     navBarHeight() {
-      return this.isDesktop ? 100 : 50
+      return 70 //this.isDesktop ? 100 : 50
     }
   }
 }

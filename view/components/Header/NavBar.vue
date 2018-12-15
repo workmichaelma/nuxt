@@ -48,11 +48,8 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/style/app.styl'
 .nav-bar
-  +mobile()
-    height 50px
-      
-  +desktop()
-    height 100px
+  height 70px
+
 .nav {
   margin: 0 auto;
   padding: 5px 0 !important;

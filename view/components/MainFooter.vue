@@ -1,19 +1,17 @@
 <template>
-  <div class="footer">
-    <v-container>
-      <!-- <v-layout align-center>
-        <v-flex shrink>
-          <v-layout class="links" wrap>
-            <v-flex class="links__item" v-for="(page, i) in pages" :key="i">
-              <nuxt-link :to="page.path">
-                {{ page.label }}
-              </nuxt-link>
-            </v-flex>
-          </v-layout>
+  <div class="footer grey lighten-5">
+    <v-container class="grey--text text--darken-4">
+      <v-layout justify-center column class="text-xs-center footer__layout">
+        <v-flex>
+          <nuxt-link class="footer__logo" to="/">
+            <img class="footer__logo__img" src="~/assets/images/working.gif"/>
+          </nuxt-link>
         </v-flex>
-        <v-spacer/>
-        <v-flex shrink class="rights">
-          <v-layout class="social" align-center wrap>
+        <v-flex>
+          <div class="title">{{companyName}}</div>
+        </v-flex>
+        <v-flex>
+          <v-layout class="social" justify-center>
             <v-flex class="social__item" v-for="(v, name) in contact" :key="name" shrink>
               <a :href="get_contactPath(name)" target="_blank">
                 <img :src="require(`~/assets/images/${name}.png`)"/>
@@ -21,17 +19,20 @@
             </v-flex>
           </v-layout>
         </v-flex>
-      </v-layout> -->
-      <v-layout class="links" justify-start>
-        <div class="links__item" v-for="(page, i) in pages" :key="i">
-          <nuxt-link :to="page.path">
-            {{ page.label }}
-          </nuxt-link>
-        </div>
+        <v-flex>
+          <div class="subheading">{{address}}</div>
+        </v-flex>
+        <v-flex>
+          <v-layout class="links" justify-center>
+            <div class="links__item" v-for="(page, i) in pages" :key="i">
+              <nuxt-link :to="page.path" class="grey--text">
+                {{ page.label }}
+              </nuxt-link>
+              <template v-if="i < pages.length - 1"> | </template>
+            </div>
+          </v-layout>
+        </v-flex>
       </v-layout>
-      <div class="rights text-xs-right">
-        <i>All Rights Reserved. </i>
-      </div>
     </v-container>
   </div>
 </template>
@@ -55,10 +56,10 @@ export default {
     },
     companyName () {
       return this.get_Profile('CompanyName')
+    },
+    address () {
+      return this.get_Profile('Address')      
     }
-  },
-  mounted() {
-    console.log(this.isDesktop)
   },
 }
 </script>
@@ -66,42 +67,20 @@ export default {
 @import '~assets/style/app.styl'
 a
   text-decoration none
-  color #fff
 .footer
-  background-color #1e252e
-  .links
-    &__item
-      text-align center
-  .social 
-    $social-height = 30px
-    &__item
-      height $social-height
-      a,
-      img
-        width $social-height
-        height $social-height
-  .rights
-    color #fff
-  +desktop()
+  &__layout
+    > .flex
+      padding-bottom 10px
+    .social
+      &__item
+        padding 0 5px
+        img
+          width 36px
+          height 36px
     .links
       &__item
-        margin 0 15px
-    .social 
-      &__item
-        margin 0 15px
-    .rights
-      font-size 12px
-  +mobile()
-    .container
-      padding 8px
-    .links
-      &__item
-        margin 0 5px
-    .social 
-      &__item
-        margin 0 2px
-    .rights
-      font-size 10px
+        &:not(:last-child)
+          padding-right 5px
 </style>
 
 
